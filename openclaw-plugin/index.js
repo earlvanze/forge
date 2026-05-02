@@ -2,6 +2,7 @@ import { createClassifyTool } from "./tool.js";
 import {
   classifyWorkflowTier,
   extractClassifiableTaskText,
+  promptTextFromEvent,
   renderWorkflowContext,
   resolveConfig,
 } from "./workflow.js";
@@ -21,7 +22,7 @@ export default {
       const liveCfg = resolveConfig(api.pluginConfig);
       if (!liveCfg.enabled || !liveCfg.injectPromptContext) return undefined;
 
-      const prompt = extractClassifiableTaskText(event?.prompt || "");
+      const prompt = extractClassifiableTaskText(promptTextFromEvent(event));
       if (!prompt || String(prompt).trim().length < 5) return undefined;
 
       const result = classifyWorkflowTier(prompt);

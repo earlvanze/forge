@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {
   classifyWorkflowTier,
   extractClassifiableTaskText,
+  promptTextFromEvent,
   renderWorkflowContext,
   shouldUseRiver,
 } from "../workflow.js";
@@ -66,4 +67,17 @@ plugin security production architecture delete financial
     "Review the Alp River OpenClaw plugin for runtime issues and suggest one improvement, but do not modify files.",
   );
   assert.equal(classifyWorkflowTier(extracted).tier, "M");
+});
+
+
+test("extracts last user task from Codex-style message event", () => {
+  const text = promptTextFromEvent({
+    prompt: "",
+    messages: [
+      { role: "system", content: "system context" },
+      { role: "user", content: [{ type: "text", text: "Make the Alp River plugin compatible with Codex" }] },
+    ],
+  });
+  assert.equal(text, "Make the Alp River plugin compatible with Codex");
+  assert.match(extractClassifiableTaskText(text), /compatible with Codex/);
 });

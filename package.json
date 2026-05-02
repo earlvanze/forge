@@ -1,6 +1,6 @@
 {
   "name": "alp-river",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OpenClaw plugin adapter for Alp River staged workflow orchestration.",
   "type": "module",
   "exports": {
@@ -12,9 +12,26 @@
     "check": "node --check openclaw-plugin/index.js && node --check openclaw-plugin/workflow.js"
   },
   "openclaw": {
-    "extensions": ["./openclaw-plugin/index.js"],
-    "compat": { "pluginApi": ">=2026.4.15" },
-    "release": { "publishToClawHub": true }
+    "extensions": [
+      "./openclaw-plugin/index.js"
+    ],
+    "compat": {
+      "pluginApi": ">=2026.4.15"
+    },
+    "release": {
+      "publishToClawHub": true
+    },
+    "bundleCompatibility": {
+      "codex": ".codex-plugin/plugin.json",
+      "skills": "skills"
+    }
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "openclaw",
+    "codex",
+    "codex-plugin",
+    "workflow",
+    "alp-river"
+  ]
 }

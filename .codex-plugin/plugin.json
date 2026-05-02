@@ -1,0 +1,10 @@
+{
+  "name": "Alp River Workflow",
+  "version": "0.1.1",
+  "description": "Codex-compatible bundle metadata for Alp River staged workflow classification and OpenClaw orchestration guidance.",
+  "skills": "skills",
+  "compatibility": {
+    "codex": ">=0.0.0",
+    "openclaw": ">=2026.4.15"
+  }
+}

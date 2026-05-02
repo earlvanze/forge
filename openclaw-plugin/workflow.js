@@ -47,6 +47,30 @@ export function resolveConfig(raw = {}) {
   };
 }
 
+export function promptTextFromEvent(event = {}) {
+  if (event?.prompt && String(event.prompt).trim()) return String(event.prompt);
+  const messages = Array.isArray(event?.messages) ? event.messages : [];
+  for (let i = messages.length - 1; i >= 0; i -= 1) {
+    const msg = messages[i] || {};
+    const role = String(msg.role || msg.author || "").toLowerCase();
+    if (role && role !== "user") continue;
+    const content = msg.content ?? msg.text ?? msg.message;
+    if (typeof content === "string" && content.trim()) return content;
+    if (Array.isArray(content)) {
+      const joined = content
+        .map((part) => {
+          if (typeof part === "string") return part;
+          if (part && typeof part === "object") return part.text || part.content || "";
+          return "";
+        })
+        .filter(Boolean)
+        .join("\n");
+      if (joined.trim()) return joined;
+    }
+  }
+  return "";
+}
+
 export function extractClassifiableTaskText(text = "") {
   const lines = String(text || "").split(/\r?\n/);
   const kept = [];

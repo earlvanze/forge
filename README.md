@@ -26,3 +26,12 @@ The adapter:
 - keeps local OpenClaw security/workspace instructions higher priority than upstream Alp River defaults
 
 Sage Router may emit matching advisory metadata, but OpenClaw remains the orchestrator.
+
+## Codex compatibility
+
+This repo is also packaged as a Codex-compatible bundle:
+
+- `.codex-plugin/plugin.json` declares the Codex bundle metadata.
+- `skills/alp-river/SKILL.md` provides Codex/OpenClaw workflow guidance.
+- The native OpenClaw plugin remains primary when OpenClaw loads the repo directly, so existing `before_prompt_build` and `alp_river_classify_task` behavior is preserved.
+- The prompt hook now supports Codex-style `messages` events when `prompt` is empty, while still stripping advisory blocks and untrusted metadata before classification.
