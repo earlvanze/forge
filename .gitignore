@@ -1,0 +1,8 @@
+.prototypes/
+.forge/
+.pytest_cache/
+__pycache__/
+.claude/*
+!.claude/skills/
+.DS_Store
+.alp-river/

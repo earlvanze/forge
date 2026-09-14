@@ -1,11 +1,13 @@
 {
-  "name": "alp-river",
-  "description": "Multi-stage agent refinement for Claude Code, scaled by automatic complexity classification.",
-  "version": "0.1.4",
+  "name": "forge",
+  "description": "Skill-first engineering pipeline for Claude Code: /forge runs a request from intent to ship, /crossfire fires the parallel review wave.",
+  "version": "2.3.0",
+  "skills": ["./adapters/claude-code/skills/"],
+  "hooks": "./adapters/claude-code/hooks/hooks.json",
   "author": {
     "name": "Alper Ortac"
   },
-  "homepage": "https://github.com/alp82/alp-river",
-  "repository": "https://github.com/alp82/alp-river",
+  "homepage": "https://github.com/alp82/forge",
+  "repository": "https://github.com/alp82/forge",
   "license": "MIT"
 }

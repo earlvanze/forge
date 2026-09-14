@@ -1,10 +1,6 @@
 {
-  "name": "Alp River Workflow",
-  "version": "0.1.1",
-  "description": "Codex-compatible bundle metadata for Alp River staged workflow classification and OpenClaw orchestration guidance.",
-  "skills": "skills",
-  "compatibility": {
-    "codex": ">=0.0.0",
-    "openclaw": ">=2026.4.15"
-  }
+  "name": "forge",
+  "version": "2.3.0",
+  "description": "Skill-first engineering pipeline: the forge skill runs a request from intent to ship, crossfire fires the parallel review wave.",
+  "skills": ["./skills/", "./adapters/codex/skills/"]
 }
