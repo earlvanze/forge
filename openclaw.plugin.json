@@ -19,5 +19,10 @@
     "injectPromptContext": { "label": "Inject Prompt Context", "help": "Adds a compact workflow advisory block during prompt build." },
     "registerTool": { "label": "Register Classifier Tool", "help": "Expose alp_river_classify_task to agents." },
     "debug": { "label": "Debug Logging", "advanced": true }
+  },
+  "contracts": {
+    "tools": [
+      "alp_river_classify_task"
+    ]
   }
 }

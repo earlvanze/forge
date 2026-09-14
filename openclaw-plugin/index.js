@@ -11,6 +11,9 @@ export default {
   id: "alp-river",
   name: "Alp River Workflow",
   description: "OpenClaw adapter for Alp River staged workflow classification and prompt guidance",
+  contracts: {
+    tools: ["alp_river_classify_task"],
+  },
   register(api) {
     const cfg = resolveConfig(api.pluginConfig);
 
