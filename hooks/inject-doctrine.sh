@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SessionStart hook: injects alp-river's AGENTS.md into the session as foundational context.
+# SessionStart hook: injects forge's AGENTS.md into the session as foundational context.
 # The plugin lives wherever Claude Code mounts it; ${CLAUDE_PLUGIN_ROOT} resolves to that path.
 
 set -euo pipefail

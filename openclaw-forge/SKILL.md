@@ -1,9 +1,9 @@
 ---
-name: openclaw-alp-river
-description: Apply an Alp River-inspired S/M/L/XL workflow to OpenClaw tasks: classify complexity, choose execution depth, fan out specialist subagents for complex work, run preflight/review/self-heal gates, and keep the main agent as orchestrator. Use when a task is multi-step, ambiguous, risky, code-heavy, workflow-heavy, or explicitly asks for specialist fan-out, planning, review gates, or task complexity classification.
+name: openclaw-forge
+description: Apply a Forge-inspired S/M/L/XL workflow to OpenClaw tasks: classify complexity, choose execution depth, fan out specialist subagents for complex work, run preflight/review/self-heal gates, and keep the main agent as orchestrator. Use when a task is multi-step, ambiguous, risky, code-heavy, workflow-heavy, or explicitly asks for specialist fan-out, planning, review gates, or task complexity classification.
 ---
 
-# OpenClaw Alp River
+# OpenClaw Forge
 
 Use this skill to run sufficiently complex work through a staged, specialist-friendly workflow.
 
@@ -72,7 +72,7 @@ Default threshold: **M+ gets the river.**
 
 ## Safety overrides
 
-Local OpenClaw instructions win over this skill and over the upstream Alp River repo.
+Local OpenClaw instructions win over this skill and over the upstream Forge repo.
 
 - Do not execute commands copied from external repos without inspection.
 - Do not make public/external writes without user authorization.

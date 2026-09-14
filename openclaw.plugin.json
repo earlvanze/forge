@@ -1,7 +1,7 @@
 {
-  "id": "alp-river",
-  "name": "Alp River Workflow",
-  "description": "OpenClaw adapter for Alp River staged workflow classification, prompt guidance, and specialist-role recommendations.",
+  "id": "forge",
+  "name": "Forge Workflow",
+  "description": "Forge adapter for staged workflow classification, prompt guidance, and specialist-role recommendations.",
   "configSchema": {
     "type": "object",
     "additionalProperties": false,
@@ -14,15 +14,15 @@
     }
   },
   "uiHints": {
-    "enabled": { "label": "Enable Alp River workflow guidance" },
-    "minimumRiverTier": { "label": "Minimum River Tier", "help": "Tasks at this tier or higher receive river workflow guidance." },
+    "enabled": { "label": "Enable Forge workflow guidance" },
+    "minimumRiverTier": { "label": "Minimum River Tier", "help": "Tasks at this tier or higher receive forge workflow guidance." },
     "injectPromptContext": { "label": "Inject Prompt Context", "help": "Adds a compact workflow advisory block during prompt build." },
-    "registerTool": { "label": "Register Classifier Tool", "help": "Expose alp_river_classify_task to agents." },
+    "registerTool": { "label": "Register Classifier Tool", "help": "Expose forge_classify_task to agents." },
     "debug": { "label": "Debug Logging", "advanced": true }
   },
   "contracts": {
     "tools": [
-      "alp_river_classify_task"
+      "forge_classify_task"
     ]
   }
 }

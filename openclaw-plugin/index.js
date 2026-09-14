@@ -8,17 +8,17 @@ import {
 } from "./workflow.js";
 
 export default {
-  id: "alp-river",
-  name: "Alp River Workflow",
-  description: "OpenClaw adapter for Alp River staged workflow classification and prompt guidance",
+  id: "forge",
+  name: "Forge Workflow",
+  description: "Forge adapter for staged workflow classification and prompt guidance",
   contracts: {
-    tools: ["alp_river_classify_task"],
+    tools: ["forge_classify_task"],
   },
   register(api) {
     const cfg = resolveConfig(api.pluginConfig);
 
     if (cfg.registerTool) {
-      api.registerTool(() => createClassifyTool(), { names: ["alp_river_classify_task"] });
+      api.registerTool(() => createClassifyTool(), { names: ["forge_classify_task"] });
     }
 
     api.on("before_prompt_build", async (event) => {
@@ -30,7 +30,7 @@ export default {
 
       const result = classifyWorkflowTier(prompt);
       if (liveCfg.debug) {
-        api.logger.info?.(`alp-river: tier=${result.tier} mode=${result.mode}`);
+        api.logger.info?.(`forge: tier=${result.tier} mode=${result.mode}`);
       }
       return { prependContext: renderWorkflowContext(result, liveCfg.minimumRiverTier) };
     });

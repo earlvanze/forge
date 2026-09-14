@@ -77,7 +77,7 @@ export function extractClassifiableTaskText(text = "") {
   let skippingAdvisory = false;
 
   for (const line of lines) {
-    if (/^## Alp River Workflow Advisory\s*$/.test(line)) {
+    if (/^## Forge Workflow Advisory\s*$/.test(line)) {
       skippingAdvisory = true;
       continue;
     }
@@ -138,7 +138,7 @@ export function shouldUseRiver(tier, minimumTier = "M") {
 export function renderWorkflowContext(result, minimumTier = "M") {
   const river = shouldUseRiver(result.tier, minimumTier);
   return [
-    "## Alp River Workflow Advisory",
+    "## Forge Workflow Advisory",
     `- Classified workflow tier: ${result.tier}`,
     `- Recommended mode: ${result.mode}`,
     `- River workflow active: ${river ? "yes" : "no"}`,
@@ -146,6 +146,6 @@ export function renderWorkflowContext(result, minimumTier = "M") {
       ? `- Recommended specialist roles: ${result.recommendedAgents.join(", ")}`
       : "- Recommended specialist roles: none",
     "- OpenClaw remains the orchestrator. Do not spawn external/cloud subagents with secrets.",
-    "- Local SECURITY.md, AGENTS.md, SOUL.md, USER.md, and tool policy override upstream Alp River defaults.",
+    "- Local SECURITY.md, AGENTS.md, SOUL.md, USER.md, and tool policy override upstream Forge defaults.",
   ].join("\n");
 }

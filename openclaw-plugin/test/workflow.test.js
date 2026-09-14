@@ -35,21 +35,21 @@ test("river activation respects configured minimum tier", () => {
 test("renders prompt context", () => {
   const result = classifyWorkflowTier("Build a production API integration and tests");
   const context = renderWorkflowContext(result, "M");
-  assert.match(context, /Alp River Workflow Advisory/);
+  assert.match(context, /Forge Workflow Advisory/);
   assert.match(context, /Classified workflow tier:/);
 });
 
 
 test("extracts user task without advisory or metadata envelope", () => {
-  const prompt = `## Alp River Workflow Advisory
+  const prompt = `## Forge Workflow Advisory
 - Classified workflow tier: XL
 - Recommended mode: multi-approach-plan-approval-specialist-fanout
 - River workflow active: yes
 - Recommended specialist roles: researcher, security-reviewer
 - OpenClaw remains the orchestrator. Do not spawn external/cloud subagents with secrets.
-- Local SECURITY.md, AGENTS.md, SOUL.md, USER.md, and tool policy override upstream Alp River defaults.
+- Local SECURITY.md, AGENTS.md, SOUL.md, USER.md, and tool policy override upstream Forge defaults.
 
-Review the Alp River OpenClaw plugin for runtime issues and suggest one improvement, but do not modify files.
+Review the Forge OpenClaw plugin for runtime issues and suggest one improvement, but do not modify files.
 
 Conversation info (untrusted metadata):
 \`\`\`json
@@ -64,7 +64,7 @@ plugin security production architecture delete financial
   const extracted = extractClassifiableTaskText(prompt);
   assert.equal(
     extracted,
-    "Review the Alp River OpenClaw plugin for runtime issues and suggest one improvement, but do not modify files.",
+    "Review the Forge OpenClaw plugin for runtime issues and suggest one improvement, but do not modify files.",
   );
   assert.equal(classifyWorkflowTier(extracted).tier, "M");
 });
@@ -75,9 +75,9 @@ test("extracts last user task from Codex-style message event", () => {
     prompt: "",
     messages: [
       { role: "system", content: "system context" },
-      { role: "user", content: [{ type: "text", text: "Make the Alp River plugin compatible with Codex" }] },
+      { role: "user", content: [{ type: "text", text: "Make the Forge plugin compatible with Codex" }] },
     ],
   });
-  assert.equal(text, "Make the Alp River plugin compatible with Codex");
+  assert.equal(text, "Make the Forge plugin compatible with Codex");
   assert.match(extractClassifiableTaskText(text), /compatible with Codex/);
 });

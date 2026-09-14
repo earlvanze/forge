@@ -2,9 +2,9 @@ import { classifyWorkflowTier } from "./workflow.js";
 
 export function createClassifyTool() {
   return {
-    label: "Alp River Task Classifier",
-    name: "alp_river_classify_task",
-    description: "Classify a task into Alp River/OpenClaw S, M, L, or XL workflow tier and return recommended orchestration mode.",
+    label: "Forge Task Classifier",
+    name: "forge_classify_task",
+    description: "Classify a task into Forge S, M, L, or XL workflow tier and return recommended orchestration mode.",
     parameters: {
       type: "object",
       additionalProperties: false,

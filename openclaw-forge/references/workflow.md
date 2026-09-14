@@ -1,6 +1,6 @@
-# OpenClaw Alp River Workflow Reference
+# OpenClaw Forge Workflow Reference
 
-This is an OpenClaw adaptation of Alp River's staged agent refinement pattern.
+This is an OpenClaw adaptation of OpenClaw Forge's staged agent refinement pattern.
 
 ## Tier heuristics
 

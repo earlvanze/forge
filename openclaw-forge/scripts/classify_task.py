@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic first-pass S/M/L/XL classifier for OpenClaw Alp River."""
+"""Deterministic first-pass S/M/L/XL classifier for OpenClaw Forge."""
 import re
 import sys
 

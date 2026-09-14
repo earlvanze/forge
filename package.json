@@ -1,7 +1,7 @@
 {
-  "name": "alp-river",
+  "name": "forge",
   "version": "0.1.1",
-  "description": "OpenClaw plugin adapter for Alp River staged workflow orchestration.",
+  "description": "OpenClaw plugin adapter for Forge staged workflow orchestration.",
   "type": "module",
   "exports": {
     ".": "./openclaw-plugin/index.js",
@@ -32,6 +32,6 @@
     "codex",
     "codex-plugin",
     "workflow",
-    "alp-river"
+    "forge"
   ]
 }
